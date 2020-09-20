@@ -20,33 +20,27 @@ const ClassSchema = new Schema({
                trim: true,
             },
          ],
-         dates: {
-            type: [
-               {
-                  date: {
-                     type: Date,
-                     required: true,
-                  },
-                  students: {
-                     type: [
-                        {
-                           name: {
-                              type: String,
-                              required: true,
-                              trim: true,
-                           },
-                           attended: {
-                              type: Boolean,
-                              required: true,
-                           },
-                        },
-                     ],
-                     required: true,
-                  },
+         dates: [
+            {
+               date: {
+                  type: Date,
+                  required: true,
                },
-            ],
-            required: true,
-         },
+               students: [
+                  {
+                     name: {
+                        type: String,
+                        required: true,
+                        trim: true,
+                     },
+                     attended: {
+                        type: Boolean,
+                        required: true,
+                     },
+                  },
+               ],
+            },
+         ],
       },
    ],
 });
