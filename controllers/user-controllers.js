@@ -56,13 +56,6 @@ const create = async (req, res) => {
    }
 };
 
-// const create = async (req, res) => {
-//    let temp = { ...req.body };
-//    User.create(temp)
-//       .then((user) => res.status(200).json(user))
-//       .catch((err) => res.status(500).json({ Error: err.message }));
-// };
-
 //router.put("/:id", userController.update);
 const update = (req, res) => {
    User.findByIdAndUpdate(
