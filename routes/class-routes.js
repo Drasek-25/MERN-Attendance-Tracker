@@ -7,6 +7,8 @@ router.get("/:id", classController.getById);
 router.post("/", classController.create);
 router.put("/:id", classController.update);
 router.delete("/:id", classController.destroy);
-router.post("/seed", classController.seedDB);
+if (process.env.NODE_ENV === development) {
+   router.post("/seed", classController.seedDB);
+}
 
 module.exports = router;

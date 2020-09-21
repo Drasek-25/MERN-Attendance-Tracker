@@ -9,6 +9,8 @@ router.post("/", userController.create);
 router.post("/login", userController.login);
 router.put("/:id", userController.update);
 router.delete("/:id", userController.destroy);
-router.post("/seed", userController.seedDB);
+if (process.env.NODE_ENV === development) {
+   router.post("/seed", userController.seedDB);
+}
 
 module.exports = router;
