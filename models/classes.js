@@ -5,6 +5,7 @@ const ClassSchema = new Schema({
    teacher: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      required: true,
    },
    classes: [
       {
