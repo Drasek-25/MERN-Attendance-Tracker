@@ -42,7 +42,6 @@ const getById = (req, res) => {
 const create = async (req, res) => {
    try {
       const hashed = await bcrypt.hash(req.body.password, 10);
-      console.log(hashed);
       const user = {
          name: req.body.name,
          email: req.body.email,
@@ -51,6 +50,25 @@ const create = async (req, res) => {
       User.create(user)
          .then((user) => res.status(200).json(user))
          .catch((err) => res.status(500).json({ Error: err.message }));
+   } catch {
+      res.status(500).send();
+   }
+};
+
+//router.post("/login", userController.login);
+const login = async (req, res) => {
+   const curUser = await User.findOne({ email: req.body.email });
+   console.log(curUser.password, req.body.password, curUser);
+   try {
+      if (await bcrypt.compare(req.body.password, curUser.password)) {
+         res.status(200).json({
+            _id: curUser._id,
+            name: curUser.name,
+            email: curUser.email,
+         });
+      } else {
+         res.send("Incorrect Password");
+      }
    } catch {
       res.status(500).send();
    }
@@ -86,4 +104,4 @@ const destroy = (req, res) => {
    });
 };
 
-module.exports = { index, getById, create, update, destroy, seedDB };
+module.exports = { index, getById, create, update, destroy, seedDB, login };
