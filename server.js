@@ -3,6 +3,7 @@ const BodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/user-routes");
+const classesRoutes = require("./routes/class-routes");
 
 const app = Express();
 const port = 8080;
@@ -17,6 +18,7 @@ mongoose
    )
    .then(() => {
       app.use("/users", userRoutes);
+      app.use("/class", classesRoutes);
       app.listen(port);
       console.log("Server live on port 8080");
    })
