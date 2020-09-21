@@ -1,5 +1,6 @@
 const User = require("../models/users");
 const { users } = require("./../data/users");
+const bcrypt = require("bcrypt");
 
 //router.post("/seed", userController.seedDB);
 const seedDB = (req, res) => {
@@ -38,12 +39,30 @@ const getById = (req, res) => {
    });
 };
 //router.post("/", userController.create);
-const create = (req, res) => {
-   let temp = { ...req.body };
-   User.create(temp)
-      .then((user) => res.status(200).json(user))
-      .catch((err) => res.status(500).json({ Error: err.message }));
+const create = async (req, res) => {
+   try {
+      const hashed = await bcrypt.hash(req.body.password, 10);
+      console.log(hashed);
+      const user = {
+         name: req.body.name,
+         email: req.body.email,
+         password: hashed,
+      };
+      User.create(user)
+         .then((user) => res.status(200).json(user))
+         .catch((err) => res.status(500).json({ Error: err.message }));
+   } catch {
+      res.status(500).send();
+   }
 };
+
+// const create = async (req, res) => {
+//    let temp = { ...req.body };
+//    User.create(temp)
+//       .then((user) => res.status(200).json(user))
+//       .catch((err) => res.status(500).json({ Error: err.message }));
+// };
+
 //router.put("/:id", userController.update);
 const update = (req, res) => {
    User.findByIdAndUpdate(
