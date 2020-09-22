@@ -1,6 +1,7 @@
 const Express = require("express");
 const BodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const session = require("express-session");
 
 const userRoutes = require("./routes/user-routes");
 const classesRoutes = require("./routes/class-routes");
@@ -11,6 +12,23 @@ const port = 8080;
 // Body parser is used for req.body
 app.use(BodyParser.json()); // for parsing application/json
 app.use(BodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+app.use(
+   session({
+      secret: process.env.SESSION_SECRET,
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+         httpOnly: true,
+         maxAge: parseInt(process.env.SESSION_MAX_AGE),
+      },
+   })
+);
+
+app.use((req, res, next) => {
+   console.log(req.session);
+   next();
+});
 
 mongoose
    .connect(

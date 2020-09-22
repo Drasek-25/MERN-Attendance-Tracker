@@ -8,6 +8,7 @@ const seedDB = (req, res) => {
       .then((users) => res.status(200).json({ users }))
       .catch((err) => res.status(500).json({ Error: err.message }));
 };
+
 //router.get("/", userController.index);
 const index = (req, res) => {
    User.find().exec((err, docs) => {
@@ -22,6 +23,7 @@ const index = (req, res) => {
       }
    });
 };
+
 // router.get("/:id", userController.getById);
 const getById = (req, res) => {
    User.findById(req.params.id).exec((err, user) => {
@@ -61,11 +63,13 @@ const login = async (req, res) => {
    console.log(curUser.password, req.body.password, curUser);
    try {
       if (await bcrypt.compare(req.body.password, curUser.password)) {
-         res.status(200).json({
+         let userInfo = {
             _id: curUser._id,
             name: curUser.name,
             email: curUser.email,
-         });
+         };
+         req.session.user = userInfo;
+         res.status(200).json(userInfo);
       } else {
          res.send("Incorrect Password");
       }

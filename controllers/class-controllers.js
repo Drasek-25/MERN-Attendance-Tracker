@@ -1,3 +1,4 @@
+const session = require("express-session");
 const Classes = require("../models/classes");
 const { classesSeed } = require("./../data/classes");
 
@@ -12,11 +13,14 @@ const getById = (req, res) => {
          res.status(500).json({
             message: `There was an error with our databse: ${err}`,
          });
+      } else if (classes.teacher !== req.session.user._id) {
+         res.status(401).send("Unauthorized: Incorrect user");
       } else {
          res.status(200).json(classes);
       }
    });
 };
+
 // router.post("/", classController.create);
 const create = (req, res) => {
    let temp = { ...req.body };
