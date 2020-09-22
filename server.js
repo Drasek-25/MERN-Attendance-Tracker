@@ -24,12 +24,12 @@ app.use(
       },
    })
 );
-
-app.use((req, res, next) => {
-   console.log(req.session);
-   next();
-});
-
+if (process.env.NODE_ENV === "development") {
+   app.use((req, res, next) => {
+      console.log(req.session);
+      next();
+   });
+}
 mongoose
    .connect(
       `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.74paq.mongodb.net/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority`

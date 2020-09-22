@@ -1,4 +1,3 @@
-const session = require("express-session");
 const Classes = require("../models/classes");
 const { classesSeed } = require("./../data/classes");
 
