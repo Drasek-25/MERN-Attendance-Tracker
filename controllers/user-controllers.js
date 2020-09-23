@@ -62,6 +62,7 @@ const login = async (req, res) => {
    const curUser = await User.findOne({ email: req.body.email });
    console.log(curUser.password, req.body.password, curUser);
    try {
+      // if password checks out then user session is created
       if (await bcrypt.compare(req.body.password, curUser.password)) {
          let userInfo = {
             _id: curUser._id,
