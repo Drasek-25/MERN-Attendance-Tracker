@@ -30,6 +30,7 @@ if (process.env.NODE_ENV === "development") {
       next();
    });
 }
+
 mongoose
    .connect(
       `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.74paq.mongodb.net/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority`
