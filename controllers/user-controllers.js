@@ -2,14 +2,14 @@ const User = require("../models/users");
 const { users } = require("./../data/users");
 const bcrypt = require("bcrypt");
 
-//router.post("/seed", userController.seedDB);
+//DEV ONLY: router.post("/seed", userController.seedDB);
 const seedDB = (req, res) => {
    User.create(users)
       .then((users) => res.status(200).json({ users }))
       .catch((err) => res.status(500).json({ Error: err.message }));
 };
 
-//router.get("/", userController.index);
+//DEV ONLY router.get("/", userController.index);
 const index = (req, res) => {
    User.find().exec((err, docs) => {
       if (err) {
@@ -24,7 +24,7 @@ const index = (req, res) => {
    });
 };
 
-// router.get("/:id", userController.getById);
+//DEV ONLY: router.get("/:id", userController.getById);
 const getById = (req, res) => {
    User.findById(req.params.id).exec((err, user) => {
       if (!user) {
@@ -40,6 +40,7 @@ const getById = (req, res) => {
       }
    });
 };
+
 //router.post("/", userController.create);
 const create = async (req, res) => {
    try {
@@ -96,6 +97,7 @@ const update = (req, res) => {
       }
    );
 };
+
 //router.delete("/:id", userController.destroy);
 const destroy = (req, res) => {
    User.findByIdAndRemove(req.params.id, function (err, user) {
