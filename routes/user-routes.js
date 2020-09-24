@@ -5,7 +5,7 @@ const userController = require("../controllers/user-controllers");
 
 router.post("/", userController.create);
 router.post("/login", userController.login);
-router.put("/:id", userController.update);
+router.put("/", userController.update);
 router.delete("/:id", userController.destroy);
 //seed route should only exist for dev env
 if (process.env.NODE_ENV === "development") {
