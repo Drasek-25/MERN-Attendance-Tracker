@@ -22,6 +22,7 @@ const passwordVerify = async (req, res, next) => {
       // if password checks out then allow user update
       if (await bcrypt.compare(req.body.password, userPassword)) {
          next()
+         return
       } else {
          res.stats(401).send("Incorrect Password");
       }
