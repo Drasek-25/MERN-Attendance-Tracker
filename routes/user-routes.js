@@ -3,6 +3,7 @@ const router = express.Router();
 
 const userController = require("../controllers/user-controllers");
 
+//this is to verify the password of currently signed in users
 const passwordVerify = async (req, res, next) => {
    const userPassword = await User.findById(req.session.user._id).exec((err, user) => {
       if (!user) {
