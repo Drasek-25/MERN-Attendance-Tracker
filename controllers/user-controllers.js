@@ -60,7 +60,19 @@ const create = async (req, res) => {
 
 //router.post("/login", userController.login);
 const login = async (req, res) => {
-   const curUser = await User.findOne({ email: req.body.email });
+   const curUser = await User.findOne({ email: req.body.email }).exec((err, user) => {
+      if (!user) {
+         res.status(404).json({
+            message: "Could not find a user with that email.",
+         });
+      } else if (err) {
+         res.status(500).json({
+            message: `There was an error with our databse: ${err}`,
+         });
+      } else {
+         return user
+      };
+   })
    try {
       // if password checks out then user session is created
       if (await bcrypt.compare(req.body.password, curUser.password)) {
@@ -73,59 +85,49 @@ const login = async (req, res) => {
    } catch {
       res.status(500).send();
    }
-};
+
+}
 
 //router.put("/:id", userController.update);
-const update = (req, res) => {
-   const curUser = await User.findOne({ email: req.body.email });
-   try {
-      // if password checks out then allow user update
-      if (await bcrypt.compare(req.body.password, curUser.password)) {
-
-         let choice = {}
-         switch (req.body.choice) {
-            case "password":
-               const hashed = await bcrypt.hash(req.body.newPassword, 10);
-               choice = { password: hashed }
-               break
-            case "name":
-               choice = { name: req.body.newName }
-               break
-            case "email":
-               choice = { email: req.body.newEmail }
-               break
-            default:
-               res.status(400).json({
-                  message: "Invalid change choice",
-               });
-         }
-
-         User.findByIdAndUpdate(
-            { _id: curUser.id },
-            choice,
-            { new: true },
-            (err, user) => {
-               if (err) {
-                  res.status(404).json({
-                     message: "Could not find a user with that id.",
-                  });
-               } else {
-                  delete user.password
-                  res.json(user);
-               }
-            }
-         );
-      } else {
-         res.stats(401).send("Incorrect Password");
-      }
-   } catch {
-      res.status(500).send();
+const update = async (req, res) => {
+   let choice = {}
+   switch (req.body.choice) {
+      case "password":
+         const hashed = await bcrypt.hash(req.body.newPassword, 10);
+         choice = { password: hashed }
+         break
+      case "name":
+         choice = { name: req.body.newName }
+         break
+      case "email":
+         choice = { email: req.body.newEmail }
+         break
+      default:
+         res.status(400).json({
+            message: "Invalid change choice",
+         });
    }
+
+   User.findByIdAndUpdate(
+      req.session.user._id,
+      choice,
+      { new: true },
+      (err, user) => {
+         if (err) {
+            res.status(404).json({
+               message: "Could not find a user with that id.",
+            });
+         } else {
+            delete user.password
+            res.json(user);
+         }
+      }
+   );
 }
 
 //router.delete("/:id", userController.destroy);
 const destroy = (req, res) => {
-   User.findByIdAndRemove(req.params.id, function (err, user) {
+   User.findByIdAndRemove(req.session.user._id).exec((err, user) => {
       if (err) {
          res.status(404).json({
             message: "Could not find a user with that id.",
@@ -135,5 +137,12 @@ const destroy = (req, res) => {
       }
    });
 };
+
+
+
+
+
+
+
 
 module.exports = { index, getById, create, update, destroy, seedDB, login };
