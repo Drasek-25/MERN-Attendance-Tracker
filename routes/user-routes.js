@@ -20,7 +20,6 @@ const passwordVerify = async (req, res, next) => {
       } else {
          if (bcrypt.compare(req.body.password, user.password)) {
             next();
-            return;
          } else {
             res.stats(401).send("Incorrect Password");
          }
