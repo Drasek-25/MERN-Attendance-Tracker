@@ -24,13 +24,13 @@ app.use(
       },
    })
 );
-//console loging all sessions for development
-if (process.env.NODE_ENV === "development") {
-   app.use((req, res, next) => {
-      console.log(req.session);
-      next();
-   });
-}
+// //console loging all sessions for development
+// if (process.env.NODE_ENV === "development") {
+//    app.use((req, res, next) => {
+//       console.log(req.session);
+//       next();
+//    });
+// }
 
 mongoose
    .connect(

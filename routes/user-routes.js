@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../models/users");
+const bcrypt = require("bcrypt");
 
 const userController = require("../controllers/user-controllers");
 
 //this is to verify the password of currently signed in users
 const passwordVerify = async (req, res, next) => {
-   const userPassword = await User.findById(req.session.user._id).exec((err, user) => {
+   console.log("test", req.session.user);
+   await User.findById(req.session.user._id).exec((err, user) => {
       if (!user) {
          res.status(404).json({
             message: "Could not find a user with that id.",
@@ -15,21 +18,15 @@ const passwordVerify = async (req, res, next) => {
             message: `There was an error with our databse: ${err}`,
          });
       } else {
-         return user.password
+         if (bcrypt.compare(req.body.password, user.password)) {
+            next();
+            return;
+         } else {
+            res.stats(401).send("Incorrect Password");
+         }
       }
    });
-   try {
-      // if password checks out then allow user update
-      if (await bcrypt.compare(req.body.password, userPassword)) {
-         next()
-         return
-      } else {
-         res.stats(401).send("Incorrect Password");
-      }
-   } catch {
-      res.status(500).send();
-   }
-}
+};
 
 router.post("/", userController.create);
 router.post("/login", userController.login);
