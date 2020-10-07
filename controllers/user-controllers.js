@@ -2,6 +2,7 @@ const User = require("../models/users");
 const { users } = require("./../data/users");
 const bcrypt = require("bcrypt");
 
+//SEED USERS
 //DEV ONLY: router.post("/seed", userController.seedDB);
 const seedDB = (req, res) => {
    User.create(users)
@@ -9,6 +10,7 @@ const seedDB = (req, res) => {
       .catch((err) => res.status(500).json({ Error: err.message }));
 };
 
+// RETURN ALL USERS
 //DEV ONLY router.get("/", userController.index);
 const index = (req, res) => {
    User.find().exec((err, docs) => {
@@ -21,14 +23,16 @@ const index = (req, res) => {
       } else {
          res.status(200).json(
             docs.map((doc) => {
-               doc.password = null;
-               return doc;
+               let newDoc = { ...doc._doc };
+               delete newDoc.password;
+               return newDoc;
             })
          );
       }
    });
 };
 
+// RETURN USER BY ID
 //DEV ONLY: router.get("/:id", userController.getById);
 const getById = (req, res) => {
    User.findById(req.params.id).exec((err, user) => {
@@ -46,6 +50,7 @@ const getById = (req, res) => {
    });
 };
 
+// CREATE USER
 //router.post("/", userController.create);
 const create = async (req, res) => {
    try {
@@ -63,35 +68,29 @@ const create = async (req, res) => {
    }
 };
 
+// LOGIN
 //router.post("/login", userController.login);
 const login = async (req, res) => {
-   const curUser = await User.findOne({ email: req.body.email }).exec(
-      (err, user) => {
-         if (!user) {
-            res.status(404).json({
-               message: "Could not find a user with that email.",
-            });
-         } else if (err) {
-            res.status(500).json({
-               message: `There was an error with our databse: ${err}`,
-            });
+   await User.findOne({ email: req.body.email }).exec((err, user) => {
+      if (!user) {
+         res.status(404).json({
+            message: "Could not find a user with that email.",
+         });
+      } else if (err) {
+         res.status(500).json({
+            message: `There was an error with our databse: ${err}`,
+         });
+      } else {
+         if (bcrypt.compare(req.body.password, user.password)) {
+            let curUser = { ...user._doc };
+            delete curUser.password;
+            req.session.user = curUser;
+            res.status(200).json(curUser);
          } else {
-            return user;
+            res.send("Incorrect Password");
          }
       }
-   );
-   try {
-      // if password checks out then user session is created
-      if (await bcrypt.compare(req.body.password, curUser.password)) {
-         delete curUser.password;
-         req.session.user = curUser;
-         res.status(200).json(curUser);
-      } else {
-         res.send("Incorrect Password");
-      }
-   } catch {
-      res.status(500).send();
-   }
+   });
 };
 
 //router.put("/:id", userController.update);
