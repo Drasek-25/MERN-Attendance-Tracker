@@ -6,22 +6,22 @@ module.exports.classesSeed = [
             name: "Class 1",
             enrolledStudents: [
                {
-                  name: "Patrick",
+                  name: "Patrick Marschlowitz",
                },
                {
-                  name: "Adrian",
+                  name: "Adrian Hopscotch",
                },
                {
-                  name: "Kaori",
+                  name: "Kaori Chocolate",
                },
                {
-                  name: "Kim",
+                  name: "Kim Lasagna",
                },
                {
-                  name: "Kory",
+                  name: "Kory Hitachi",
                },
                {
-                  name: "Dalton",
+                  name: "Dalton Amateresu",
                },
             ],
             dates: [
@@ -172,105 +172,22 @@ module.exports.classesSeed = [
             name: "Class 2",
             enrolledStudents: [
                {
-                  name: "Patrick",
+                  name: "Patrick Marschlowitz",
                },
                {
-                  name: "Adrian",
+                  name: "Adrian Hopscotch",
                },
                {
-                  name: "Kaori",
+                  name: "Kaori Chocolate",
                },
                {
-                  name: "Kim",
+                  name: "Kim Lasagna",
                },
                {
-                  name: "Kory",
+                  name: "Kory Hitachi",
                },
                {
-                  name: "Dalton",
-               },
-            ],
-            dates: [
-               {
-                  date: "05 October 2011 14:48 UTC",
-                  students: [
-                     {
-                        name: "Patrick",
-                        attended: true,
-                     },
-                     {
-                        name: "Adrian",
-                        attended: false,
-                     },
-                     {
-                        name: "Kaori",
-                        attended: true,
-                     },
-                     {
-                        name: "Kim",
-                        attended: false,
-                     },
-                     {
-                        name: "Kory",
-                        attended: true,
-                     },
-                     {
-                        name: "Dalton",
-                        attended: true,
-                     },
-                  ],
-               },
-               {
-                  date: "07 October 2011 14:48 UTC",
-                  students: [
-                     {
-                        name: "Patrick",
-                        attended: true,
-                     },
-                     {
-                        name: "Adrian",
-                        attended: true,
-                     },
-                     {
-                        name: "Kaori",
-                        attended: false,
-                     },
-                     {
-                        name: "Kim",
-                        attended: true,
-                     },
-                     {
-                        name: "Kory",
-                        attended: false,
-                     },
-                     {
-                        name: "Dalton",
-                        attended: true,
-                     },
-                  ],
-               },
-            ],
-         },
-         {
-            name: "Class 2",
-            enrolledStudents: [
-               {
-                  name: "Patrick",
-               },
-               {
-                  name: "Adrian",
-               },
-               {
-                  name: "Kaori",
-               },
-               {
-                  name: "Kim",
-               },
-               {
-                  name: "Kory",
-               },
-               {
-                  name: "Dalton",
+                  name: "Dalton Amateresu",
                },
             ],
             dates: [
@@ -520,6 +437,89 @@ module.exports.classesSeed = [
                },
                {
                   name: "Dalton",
+               },
+            ],
+            dates: [
+               {
+                  date: "05 October 2011 14:48 UTC",
+                  students: [
+                     {
+                        name: "Patrick",
+                        attended: true,
+                     },
+                     {
+                        name: "Adrian",
+                        attended: false,
+                     },
+                     {
+                        name: "Kaori",
+                        attended: true,
+                     },
+                     {
+                        name: "Kim",
+                        attended: false,
+                     },
+                     {
+                        name: "Kory",
+                        attended: true,
+                     },
+                     {
+                        name: "Dalton",
+                        attended: true,
+                     },
+                  ],
+               },
+               {
+                  date: "07 October 2011 14:48 UTC",
+                  students: [
+                     {
+                        name: "Patrick",
+                        attended: true,
+                     },
+                     {
+                        name: "Adrian",
+                        attended: true,
+                     },
+                     {
+                        name: "Kaori",
+                        attended: false,
+                     },
+                     {
+                        name: "Kim",
+                        attended: true,
+                     },
+                     {
+                        name: "Kory",
+                        attended: false,
+                     },
+                     {
+                        name: "Dalton",
+                        attended: true,
+                     },
+                  ],
+               },
+            ],
+         },
+         {
+            name: "Class 2",
+            enrolledStudents: [
+               {
+                  name: "Patrick Marschlowitz",
+               },
+               {
+                  name: "Adrian Hopscotch",
+               },
+               {
+                  name: "Kaori Chocolate",
+               },
+               {
+                  name: "Kim Lasagna",
+               },
+               {
+                  name: "Kory Hitachi",
+               },
+               {
+                  name: "Dalton Amateresu",
                },
             ],
             dates: [
@@ -758,22 +758,22 @@ module.exports.classesSeed = [
             name: "Class 2",
             enrolledStudents: [
                {
-                  name: "Patrick",
+                  name: "Patrick Marschlowitz",
                },
                {
-                  name: "Adrian",
+                  name: "Adrian Hopscotch",
                },
                {
-                  name: "Kaori",
+                  name: "Kaori Chocolate",
                },
                {
-                  name: "Kim",
+                  name: "Kim Lasagna",
                },
                {
-                  name: "Kory",
+                  name: "Kory Hitachi",
                },
                {
-                  name: "Dalton",
+                  name: "Dalton Amateresu",
                },
             ],
             dates: [
