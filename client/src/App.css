@@ -6,11 +6,55 @@
    --font-standard: #e2e5d2;
    --emphasis: #ffc163;
 }
+* {
+   font-family: "Comfortaa", cursive;
+}
+html,
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   background-color: var(--bg-primary);
+}
+#root {
+   height: 100%;
+}
+.App {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+/* ------------------------NAVBAR------------------------ */
 .navbar {
    background-color: var(--bg-secondary);
 }
 .navbar__title {
+   display: block;
+   margin: 6px 12px;
    color: var(--font-title);
-   font-family: "Comfortaa", cursive;
+
    font-size: 1.5em;
+}
+/* ------------------------LOGIN------------------------ */
+.login-view {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: max-content;
+   flex-grow: 2;
+}
+.login-card {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   background-color: var(--bg-secondary);
+   max-width: 300px;
+   width: 85%;
+   height: 200px;
+   padding: 10px;
+}
+.login-card__title {
+   color: var(--font-title);
+   font-size: 1.2em;
 }

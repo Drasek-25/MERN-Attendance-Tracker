@@ -1,7 +1,7 @@
 function NavBar() {
    return (
       <div className="navbar">
-         <span className="navbar__title">Attendance Tracker</span>
+         <h1 className="navbar__title">Attendance Tracker</h1>
       </div>
    );
 }
