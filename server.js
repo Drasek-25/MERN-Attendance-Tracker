@@ -10,7 +10,12 @@ const classesRoutes = require("./routes/class-routes");
 const app = Express();
 const port = 8080;
 
-app.use(cors());
+app.use(
+   cors({
+      credentials: true,
+      origin: process.env.CLIENT_URL,
+   })
+);
 // Body parser is used for req.body
 app.use(BodyParser.json()); // for parsing application/json
 app.use(BodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -21,7 +26,8 @@ app.use(
       resave: false,
       saveUninitialized: false,
       cookie: {
-         httpOnly: true,
+         httpOnly: false,
+         sameSite: false,
          maxAge: parseInt(process.env.SESSION_MAX_AGE),
       },
    })

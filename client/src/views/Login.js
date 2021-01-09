@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-function Login({ setUserId }) {
+function Login() {
    const initialState = {
       email: "",
       password: "",
@@ -14,17 +14,15 @@ function Login({ setUserId }) {
    };
    const handleKeyDown = (e) => {
       if (e.keyCode === 13) {
-         console.log("enter hit");
          handleLogin();
          setForm(initialState);
       }
    };
-   const loginRoute = "http://localhost:8080/users/login";
+
    const handleLogin = () => {
-      console.log(form);
-      axios.post(loginRoute, form).then((res) => {
-         console.log(res);
-         setUserId(res.data._id);
+      const loginRoute = "http://localhost:8080/users/login";
+      axios.post(loginRoute, form, { withCredentials: true }).then((res) => {
+         
       });
    };
 
