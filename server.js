@@ -2,6 +2,7 @@ const Express = require("express");
 const BodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const session = require("express-session");
+const cors = require("cors");
 
 const userRoutes = require("./routes/user-routes");
 const classesRoutes = require("./routes/class-routes");
@@ -9,6 +10,7 @@ const classesRoutes = require("./routes/class-routes");
 const app = Express();
 const port = 8080;
 
+app.use(cors());
 // Body parser is used for req.body
 app.use(BodyParser.json()); // for parsing application/json
 app.use(BodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
