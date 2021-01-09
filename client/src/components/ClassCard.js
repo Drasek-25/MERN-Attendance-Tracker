@@ -3,16 +3,18 @@ const ClassCard = ({ classTitle, students }) => {
       <div className="class-card">
          <div className="class-card__header">
             <h2 className="class-card__title">{classTitle}</h2>
-            <button className="class-card__button"></button>
+            <button className="class-card__button">...</button>
          </div>
          <h3 className="class-card__subtitle">Students</h3>
-         {students.map((student) => {
-            return (
-               <span className="class-card__student" key={student._id}>
-                  {student.name}
-               </span>
-            );
-         })}
+         <div className="class-card__student-container">
+            {students.map((student) => {
+               return (
+                  <span className="class-card__student" key={student._id}>
+                     {student.name}
+                  </span>
+               );
+            })}
+         </div>
       </div>
    );
 };

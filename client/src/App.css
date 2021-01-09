@@ -36,6 +36,7 @@ body {
 .navbar {
    background-color: var(--bg-secondary);
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   margin-bottom: 20px;
 }
 .navbar__title {
    display: block;
@@ -96,7 +97,6 @@ body {
    background-color: var(--bg-tertiary);
    max-width: 1000px;
    width: 85%;
-   height: 200px;
    border-radius: 10px;
    border-radius: 10px;
    box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.25);
@@ -125,19 +125,64 @@ body {
    font-weight: bold;
    display: flex;
    justify-content: center;
-   line-height: 1.4rem;
+   line-height: 1.5rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
 }
 .classes__card-container {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-evenly;
+   margin-top: 20px;
 }
 /* ====================== ClassCard ====================== */
 
 .class-card {
    background-color: var(--bg-secondary);
-   width: 40%;
+   width: 42%;
+   max-width: 300px;
+   margin-bottom: 20px;
+   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 6px;
+   padding: 10px;
+}
+.class-card__header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.class-card__title {
+   color: var(--font-title);
+   margin: 0px;
+   font-size: 1em;
+   font-weight: bold;
+}
+.class-card__button {
+   background-color: var(--emphasis);
+   border: 0px solid black;
+   border-radius: 50%;
+   color: var(--bg-secondary);
+   width: 20px;
+   height: 20px;
+   font-size: 30px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   line-height: 0.15rem;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+}
+.class-card__subtitle {
+   color: var(--font-title);
+   font-size: 1em;
+   font-weight: normal;
+   margin: 6px 0px;
+}
+.class-card__student-container {
+   display: flex;
+   flex-wrap: wrap;
+}
+.class-card__student {
+   font-size: 0.9em;
+   margin: 5px;
 }
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */

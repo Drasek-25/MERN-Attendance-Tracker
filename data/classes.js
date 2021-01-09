@@ -7,10 +7,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -80,10 +90,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -153,10 +173,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -226,10 +256,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -299,10 +339,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -372,10 +422,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -445,10 +505,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -518,10 +588,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -596,10 +676,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
@@ -669,10 +759,20 @@ module.exports.classesSeed = [
             enrolledStudents: [
                {
                   name: "Patrick",
+               },
+               {
                   name: "Adrian",
+               },
+               {
                   name: "Kaori",
+               },
+               {
                   name: "Kim",
+               },
+               {
                   name: "Kory",
+               },
+               {
                   name: "Dalton",
                },
             ],
