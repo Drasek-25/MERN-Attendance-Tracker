@@ -12,7 +12,7 @@ const requireAuth = (req, res, next) => {
    next();
 };
 
-router.get("/:id", requireAuth, classController.getById);
+router.get("/", requireAuth, classController.getById);
 router.post("/", requireAuth, classController.create);
 router.put("/:id", requireAuth, classController.update);
 router.delete("/:id", requireAuth, classController.destroy);

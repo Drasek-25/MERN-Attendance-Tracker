@@ -2,10 +2,10 @@ import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-function Login() {
+function Login({ setUserId }) {
    const initialState = {
-      email: "",
-      password: "",
+      email: "donkey@wiener.com",
+      password: "jalapeno",
    };
    const [form, setForm] = useState(initialState);
 
@@ -19,21 +19,23 @@ function Login() {
       }
    };
 
+   const history = useHistory();
    const handleLogin = () => {
       const loginRoute = "http://localhost:8080/users/login";
       axios.post(loginRoute, form, { withCredentials: true }).then((res) => {
-         
+         setUserId(res.data._id);
+         history.push("/classes");
       });
    };
 
    return (
-      <div className="login-view">
-         <div className="login-card">
-            <h2 className="login-card__title">Login</h2>
-            <div className="login-card__form-row">
-               <span className="login-card__form-title">email</span>
+      <div className="view">
+         <div className="login">
+            <h2 className="login__title">Login</h2>
+            <div className="login__form-row">
+               <span className="login__form-title">email</span>
                <input
-                  className="login-card__form-input"
+                  className="login__form-input"
                   type="text"
                   id="email"
                   value={form.email}
@@ -41,10 +43,10 @@ function Login() {
                   onChange={handleInput}
                ></input>
             </div>
-            <div className="login-card__form-row">
-               <span className="login-card__form-title">pw</span>
+            <div className="login__form-row">
+               <span className="login__form-title">pw</span>
                <input
-                  className="login-card__form-input"
+                  className="login__form-input"
                   type="password"
                   id="password"
                   value={form.password}
@@ -52,7 +54,7 @@ function Login() {
                   onChange={handleInput}
                ></input>
             </div>
-            <Link className="login-card__reglink" to="">
+            <Link className="login__reglink" to="">
                Register Here
             </Link>
          </div>

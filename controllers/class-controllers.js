@@ -2,11 +2,12 @@ const Classes = require("../models/classes");
 const { classesSeed } = require("./../data/classes");
 
 // router.get("/:id", classController.getById);
+//req.body.id
 const getById = (req, res) => {
-   Classes.findById(req.params.id).exec((err, classes) => {
+   Classes.findById(req.body.id).exec((err, classes) => {
       if (!classes) {
          res.status(404).json({
-            message: "Could not find a class with that id.",
+            message: `Could not find a class with that id. ${req.body.id}`,
          });
       } else if (err) {
          res.status(500).json({

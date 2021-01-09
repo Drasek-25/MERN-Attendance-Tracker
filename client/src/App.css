@@ -25,6 +25,13 @@ body {
    flex-direction: column;
    height: 100%;
 }
+.view {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: max-content;
+   flex-grow: 2;
+}
 /* ====================== NAVBAR ====================== */
 .navbar {
    background-color: var(--bg-secondary);
@@ -44,7 +51,7 @@ body {
    height: max-content;
    flex-grow: 2;
 }
-.login-card {
+.login {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -56,23 +63,23 @@ body {
    border-radius: 10px;
    box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.25);
 }
-.login-card__title {
+.login__title {
    color: var(--font-title);
    font-size: 1.3em;
    margin: 8px;
 }
-.login-card__form-row {
+.login__form-row {
    display: flex;
    justify-content: space-around;
    align-items: center;
    width: 100%;
    margin: 12px 0px;
 }
-.login-card__form-title {
+.login__form-title {
    font-size: 18px;
    margin-right: 6px;
 }
-.login-card__form-input {
+.login__form-input {
    background-color: var(--bg-tertiary);
    width: 80%;
    border: 0px solid black;
@@ -80,11 +87,47 @@ body {
    padding: 4px 6px;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
 }
-.login-card__reglink {
+.login__reglink {
    font-size: 14px;
    margin: 6px;
 }
-/* ====================== XXXXX ====================== */
+/* ====================== Classes ====================== */
+.classes {
+   background-color: var(--bg-tertiary);
+   max-width: 1000px;
+   width: 85%;
+   height: 200px;
+   border-radius: 10px;
+   border-radius: 10px;
+   box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.25);
+}
+.classes__navbar {
+   background-color: var(--bg-secondary);
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   padding: 8px;
+   border-radius: 10px 10px 0px 0px;
+}
+.classes__navbar-title {
+   color: var(--font-title);
+   font-size: 1.3em;
+   margin: 0px;
+}
+.classes_navbar-button {
+   background-color: var(--emphasis);
+   border: 0px solid black;
+   border-radius: 50%;
+   color: var(--bg-secondary);
+   width: 20px;
+   height: 20px;
+   font-size: 30px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   line-height: 1.4rem;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+}
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */
