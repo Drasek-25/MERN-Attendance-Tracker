@@ -6,21 +6,13 @@ import { useState } from "react";
 import Classes from "./views/Classes";
 
 function App() {
-   const [userId, setUserId] = useState();
    return (
       <div className="App">
          <NavBar />
 
          <Switch>
-            <Route
-               exact
-               path="/"
-               render={() => <Login setUserId={setUserId} />}
-            />
-            <Route
-               path="/classes"
-               component={() => <Classes userId={userId} />}
-            />
+            <Route exact path="/" render={() => <Login />} />
+            <Route path="/classes" component={() => <Classes />} />
             <Route render={() => <h1>404</h1>} />
          </Switch>
       </div>

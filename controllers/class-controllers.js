@@ -5,7 +5,6 @@ const { classesSeed } = require("./../data/classes");
 //req.body.id
 const getById = (req, res) => {
    Classes.findById(req.session.user.classes).exec((err, classes) => {
-      console.log(classes.teacher, typeof req.session.user._id);
       if (!classes) {
          res.status(404).json({
             message: `Could not find a class with that id.`,

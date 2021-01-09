@@ -2,10 +2,10 @@ import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-function Login({ setUserId }) {
+function Login() {
    const initialState = {
-      email: "donkey@wiener.com",
-      password: "jalapeno",
+      email: "Shanna@melissa.tv",
+      password: "password1",
    };
    const [form, setForm] = useState(initialState);
 
@@ -23,7 +23,6 @@ function Login({ setUserId }) {
    const handleLogin = () => {
       const loginRoute = "http://localhost:8080/users/login";
       axios.post(loginRoute, form, { withCredentials: true }).then((res) => {
-         setUserId(res.data._id);
          history.push("/classes");
       });
    };

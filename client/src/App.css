@@ -128,7 +128,17 @@ body {
    line-height: 1.4rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
 }
-/* ====================== XXXXX ====================== */
+.classes__card-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+}
+/* ====================== ClassCard ====================== */
+
+.class-card {
+   background-color: var(--bg-secondary);
+   width: 40%;
+}
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */
