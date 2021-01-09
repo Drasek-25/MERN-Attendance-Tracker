@@ -5,15 +5,20 @@ function Login() {
       <div className="login-view">
          <div className="login-card">
             <h2 className="login-card__title">Login</h2>
-            <div className="login-card__un">
-               <span className="login-card__un-title">un</span>
-               <input className="login-card__un-input"></input>
+            <div className="login-card__form">
+               <span className="login-card__form-title">un</span>
+               <input className="login-card__form-input" type="text"></input>
             </div>
-            <div className="login-card__pw">
-               <span className="login-card__pw-title">un</span>
-               <input className="login-card__pw-input"></input>
+            <div className="login-card__form">
+               <span className="login-card__form-title">pw</span>
+               <input
+                  className="login-card__form-input"
+                  type="password"
+               ></input>
             </div>
-            <Link to="">Register Here</Link>
+            <Link className="login-card__reglink" to="">
+               Register Here
+            </Link>
          </div>
       </div>
    );

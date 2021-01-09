@@ -8,6 +8,7 @@
 }
 * {
    font-family: "Comfortaa", cursive;
+   color: var(--font-standard);
 }
 html,
 body {
@@ -24,18 +25,18 @@ body {
    flex-direction: column;
    height: 100%;
 }
-/* ------------------------NAVBAR------------------------ */
+/* ====================== NAVBAR ====================== */
 .navbar {
    background-color: var(--bg-secondary);
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .navbar__title {
    display: block;
    margin: 6px 12px;
    color: var(--font-title);
-
    font-size: 1.5em;
 }
-/* ------------------------LOGIN------------------------ */
+/* ====================== LOGIN ====================== */
 .login-view {
    display: flex;
    justify-content: center;
@@ -51,10 +52,35 @@ body {
    background-color: var(--bg-secondary);
    max-width: 300px;
    width: 85%;
-   height: 200px;
-   padding: 10px;
+   padding: 15px 20px;
+   border-radius: 10px;
+   box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.25);
 }
 .login-card__title {
    color: var(--font-title);
-   font-size: 1.2em;
+   font-size: 1.3em;
+   margin: 8px;
+}
+.login-card__form {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 100%;
+   margin: 12px 0px;
+}
+.login-card__form-title {
+   font-size: 18px;
+   margin-right: 6px;
+}
+.login-card__form-input {
+   background-color: var(--bg-tertiary);
+   width: 80%;
+   border: 0px solid black;
+   border-radius: 4px;
+   padding: 4px 6px;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+}
+.login-card__reglink {
+   font-size: 14px;
+   margin: 6px;
 }
