@@ -4,6 +4,7 @@ import ClassCard from "../components/ClassCard";
 
 const Classes = () => {
    const [classes, setClasses] = useState();
+
    useEffect(() => {
       const getClasses = () => {
          const classesRoute = "http://localhost:8080/class";
@@ -14,6 +15,7 @@ const Classes = () => {
       };
       getClasses();
    }, []);
+
    return (
       <div className="view">
          <div className="classes">
@@ -29,6 +31,7 @@ const Classes = () => {
                            classTitle={clas.name}
                            students={clas.enrolledStudents}
                            key={clas._id}
+                           classId={clas._id}
                         />
                      );
                   })}

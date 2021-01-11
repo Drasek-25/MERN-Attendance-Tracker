@@ -127,6 +127,7 @@ body {
    justify-content: center;
    line-height: 1.5rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+   outline: none;
 }
 .classes__card-container {
    display: flex;
@@ -169,6 +170,7 @@ body {
    justify-content: center;
    line-height: 0.15rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+   outline: none;
 }
 .class-card__subtitle {
    color: var(--font-title);
@@ -181,7 +183,7 @@ body {
    flex-wrap: wrap;
 }
 .class-card__student {
-   font-size: 0.9em;
+   font-size: 0.8em;
    margin: 5px;
 }
 /* ====================== XXXXX ====================== */
