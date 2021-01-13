@@ -43,6 +43,7 @@ body {
    margin: 6px 12px;
    color: var(--font-title);
    font-size: 1.5em;
+   user-select: none;
 }
 /* ====================== LOGIN ====================== */
 .login-view {
@@ -100,6 +101,7 @@ body {
    border-radius: 10px;
    border-radius: 10px;
    box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.25);
+   padding-bottom: 20px;
 }
 .classes__navbar {
    background-color: var(--bg-secondary);
@@ -113,6 +115,7 @@ body {
    color: var(--font-title);
    font-size: 1.3em;
    margin: 0px;
+   user-select: none;
 }
 .classes_navbar-button {
    background-color: var(--emphasis);
@@ -128,6 +131,7 @@ body {
    line-height: 1.5rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
    outline: none;
+   user-select: none;
 }
 .classes__card-container {
    display: flex;
@@ -193,10 +197,16 @@ body {
    flex-direction: row;
    justify-content: space-between;
    width: 90%;
-   margin-bottom: 14px;
    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 6px;
    padding: 10px;
+   margin: 0px 16px;
+}
+.class-date--active {
+   border-radius: 6px 6px 0px 0px;
+}
+.class-date:not(:first-child) {
+   margin-top: 14px;
 }
 .class-date__button {
    background-color: var(--emphasis);
@@ -214,8 +224,64 @@ body {
    outline: none;
    user-select: none;
 }
+.class-date__button--active {
+   line-height: 1rem;
+}
+.class-date__text {
+   color: var(--font-title);
+   margin: 0px;
+   font-size: 1em;
+   font-weight: bold;
+   user-select: none;
+}
 
-/* ====================== XXXXX ====================== */
+/* ====================== Date Attendance ====================== */
+.date-attendance {
+   background-color: rgba(82, 69, 61, 0.5);
+
+   display: flex;
+   flex-wrap: wrap;
+   width: 90%;
+   margin: 0px 16px;
+   height: 0px;
+   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 0px 0px 6px 6px;
+   padding: 10px;
+   transition: height 0.18s linear;
+}
+.date-attendance--active {
+   height: 100px;
+}
+.date-attendance--inactive {
+   height: 0px;
+}
+.date-attendance__row {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   width: 41%;
+   max-width: 200px;
+   margin: 4px;
+   opacity: 0;
+   transition: opacity 0.1s ease-in;
+   transition-delay: 0.18s;
+}
+.date-attendance__row--active {
+   opacity: 100%;
+}
+.date-attendance__row--inactive {
+   opacity: 0%;
+}
+.date-attendance__button {
+   width: 16px;
+   height: 16px;
+   margin-right: 4px;
+}
+.date-attendance__button--active {
+}
+.date-attendance__button--inactive {
+   filter: contrast(0%) saturate(0%) brightness(120%);
+}
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */
