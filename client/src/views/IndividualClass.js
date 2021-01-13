@@ -1,12 +1,12 @@
 import { PromiseProvider } from "mongoose";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ClassDate from "../components/ClassDate";
 
 const IndividualClass = (props) => {
    const [indClass, setIndClass] = useState();
 
    useEffect(() => {
-      console.log("test");
       const getClasses = () => {
          const classesRoute = "http://localhost:8080/class";
          axios.get(classesRoute, { withCredentials: true }).then((res) => {
@@ -14,6 +14,7 @@ const IndividualClass = (props) => {
             const currentClass = classes.filter(
                (clas) => clas._id === props.match.params.classId
             );
+            console.log(currentClass);
             setIndClass(...currentClass);
          });
       };
@@ -30,12 +31,7 @@ const IndividualClass = (props) => {
                </div>
                <div className="classes__card-container">
                   {indClass.dates.map((date) => {
-                     return (
-                        <div className="class-date" key={date._id}>
-                           <span className="class-date__text">{date.date}</span>
-                           <button className="class-date__button" />
-                        </div>
-                     );
+                     return <ClassDate classDate={date} />;
                   })}
                </div>
             </div>

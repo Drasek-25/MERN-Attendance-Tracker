@@ -28,7 +28,7 @@ body {
 .view {
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: flex-start;
    height: max-content;
    flex-grow: 2;
 }
@@ -186,7 +186,35 @@ body {
    font-size: 0.8em;
    margin: 5px;
 }
-/* ====================== XXXXX ====================== */
+/* ====================== ClassDate ====================== */
+.class-date {
+   background-color: var(--bg-secondary);
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 90%;
+   margin-bottom: 14px;
+   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 6px;
+   padding: 10px;
+}
+.class-date__button {
+   background-color: var(--emphasis);
+   border: 0px solid black;
+   border-radius: 50%;
+   color: var(--bg-secondary);
+   width: 20px;
+   height: 20px;
+   font-size: 30px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   line-height: 1.45rem;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+   outline: none;
+   user-select: none;
+}
+
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */

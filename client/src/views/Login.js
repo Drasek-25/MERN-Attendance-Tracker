@@ -28,7 +28,7 @@ function Login() {
    };
 
    return (
-      <div className="view">
+      <div className="login-view">
          <div className="login">
             <h2 className="login__title">Login</h2>
             <div className="login__form-row">
