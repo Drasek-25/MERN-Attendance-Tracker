@@ -207,23 +207,55 @@ body {
 .class-date:not(:first-child) {
    margin-top: 14px;
 }
-.class-date__button {
+.class-date__delete-icon {
+   width: 13px;
+}
+
+.class-date__button-container {
+   display: flex;
+   flex-direction: row;
+}
+
+.class-date__delete-button {
    background-color: var(--emphasis);
+   display: flex;
+   justify-content: center;
+   align-items: center;
    border: 0px solid black;
    border-radius: 50%;
    color: var(--bg-secondary);
-   width: 20px;
-   height: 20px;
+   width: 24px;
+   height: 24px;
    font-size: 30px;
    font-weight: bold;
    display: flex;
    justify-content: center;
-   line-height: 1.45rem;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+   outline: none;
+   user-select: none;
+   margin-right: 14px;
+}
+.class-date__open-button {
+   background-color: var(--emphasis);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 0px solid black;
+   border-radius: 50%;
+   color: var(--bg-secondary);
+   width: 24px;
+   height: 24px;
+   font-size: 30px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   line-height: 10rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
    outline: none;
    user-select: none;
 }
-.class-date__button--active {
+
+.class-date__open-button--active {
    line-height: 1rem;
 }
 .class-date__text {

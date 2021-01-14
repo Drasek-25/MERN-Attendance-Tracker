@@ -1,6 +1,6 @@
-import { MongooseDocument } from "mongoose";
 import { useState } from "react";
 import DateAttendance from "./DateAttendance";
+import trashIcon from "../data/images/recycle-bin.svg";
 
 const ClassDate = ({ classDate }) => {
    const [active, setActive] = useState(false);
@@ -27,14 +27,19 @@ const ClassDate = ({ classDate }) => {
             <span className="class-date__text">
                {handleDate(classDate.date)}
             </span>
-            <button
-               className={
-                  "class-date__button " +
-                  (active && "class-date__button--active")
-               }
-            >
-               {active ? "-" : "+"}
-            </button>
+            <div className="class-date__button-container">
+               <button className="class-date__delete-button">
+                  <img src={trashIcon} className="class-date__delete-icon" />
+               </button>
+               <button
+                  className={
+                     "class-date__open-button " +
+                     (active && "class-date__open-button--active")
+                  }
+               >
+                  {active ? "-" : "+"}
+               </button>
+            </div>
          </div>
          {active && (
             <div
