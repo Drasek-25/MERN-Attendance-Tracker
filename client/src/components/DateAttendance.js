@@ -35,7 +35,7 @@ const DateAttendance = ({ student, transition }) => {
             }
             onClick={handleClick}
          />
-         <span>{student.name}</span>
+         <span className="date-attendance__text">{student.name}</span>
       </div>
    );
 };

@@ -131,7 +131,6 @@ body {
    line-height: 1.5rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
    outline: none;
-   user-select: none;
 }
 .classes__card-container {
    display: flex;
@@ -238,9 +237,9 @@ body {
 /* ====================== Date Attendance ====================== */
 .date-attendance {
    background-color: rgba(82, 69, 61, 0.5);
-
    display: flex;
    flex-wrap: wrap;
+   justify-content: space-between;
    width: 90%;
    margin: 0px 16px;
    height: 0px;
@@ -250,7 +249,7 @@ body {
    transition: height 0.18s linear;
 }
 .date-attendance--active {
-   height: 100px;
+   height: auto;
 }
 .date-attendance--inactive {
    height: 0px;
@@ -261,7 +260,7 @@ body {
    align-items: center;
    width: 41%;
    max-width: 200px;
-   margin: 4px;
+   margin: 6px;
    opacity: 0;
    transition: opacity 0.1s ease-in;
    transition-delay: 0.18s;
@@ -276,11 +275,17 @@ body {
    width: 16px;
    height: 16px;
    margin-right: 4px;
+   filter: saturate(200%);
+   user-select: none;
 }
 .date-attendance__button--active {
 }
 .date-attendance__button--inactive {
    filter: contrast(0%) saturate(0%) brightness(120%);
+}
+.date-attendance__text {
+   font-size: 14px;
+   user-select: none;
 }
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */
