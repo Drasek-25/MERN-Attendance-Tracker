@@ -32,6 +32,17 @@ const IndividualClass = (props) => {
       // console.log(currentClass);
       setIndClass(currentClass);
    };
+   const handleUpdateClassDate = (newDate, oldDate) => {
+      const currentClass = { ...indClass };
+      const classDates = currentClass.dates.map((date) => {
+         if (date.date === oldDate) {
+            date.date = newDate;
+         }
+         return date;
+      });
+      currentClass.dates = classDates;
+      setIndClass(currentClass);
+   };
 
    useEffect(() => {
       const getClasses = () => {
@@ -87,6 +98,7 @@ const IndividualClass = (props) => {
                            classDate={date}
                            handleAddClassDate={handleAddClassDate}
                            handleDeleteClassDate={handleDeleteClassDate}
+                           handleUpdateClassDate={handleUpdateClassDate}
                         />
                      );
                   })}

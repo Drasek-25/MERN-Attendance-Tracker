@@ -266,6 +266,26 @@ body {
    user-select: none;
    z-index: 2;
 }
+.class-date__edit-button {
+   background-color: var(--emphasis);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 0px solid black;
+   border-radius: 50%;
+   color: var(--bg-secondary);
+   width: 24px;
+   height: 24px;
+   font-size: 30px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+   outline: none;
+   user-select: none;
+   z-index: 2;
+   margin-right: 14px;
+}
 .class-date__open-button {
    background-color: var(--emphasis);
    display: flex;
@@ -300,6 +320,15 @@ body {
 .class-date__button-icon {
    width: 16px;
    fill: blanchedalmond;
+}
+.class-date__date-input {
+   background-color: var(--bg-tertiary);
+   width: 40%;
+   max-width: 160px;
+   border: 0px solid black;
+   border-radius: 4px;
+   padding: 3px 4px;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
 }
 
 /* ====================== Date Attendance ====================== */
