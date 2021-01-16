@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ClassCard from "../components/ClassCard";
+import plusIcon from "../data/images/plus.svg";
 
 const Classes = () => {
    const [classes, setClasses] = useState();
@@ -21,7 +22,9 @@ const Classes = () => {
          <div className="classes">
             <div className="classes__navbar">
                <h2 className="classes__navbar-title">Classes</h2>
-               <button className="classes_navbar-button">+</button>
+               <button className="classes__navbar-add-button">
+                  <img src={plusIcon} className="classes__navbar-button-icon" />
+               </button>
             </div>
             <div className="classes__card-container">
                {classes &&

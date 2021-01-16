@@ -108,6 +108,7 @@ body {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
+   align-items: center;
    padding: 8px;
    border-radius: 10px 10px 0px 0px;
 }
@@ -117,13 +118,20 @@ body {
    margin: 0px;
    user-select: none;
 }
-.classes_navbar-button {
+.classes__navbar-button-row {
+   display: flex;
+   flex-direction: row;
+}
+.classes__navbar-save-button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    background-color: var(--emphasis);
    border: 0px solid black;
    border-radius: 50%;
    color: var(--bg-secondary);
-   width: 20px;
-   height: 20px;
+   width: 26px;
+   height: 26px;
    font-size: 30px;
    font-weight: bold;
    display: flex;
@@ -131,6 +139,28 @@ body {
    line-height: 1.5rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
    outline: none;
+   margin-right: 14px;
+}
+.classes__navbar-add-button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--emphasis);
+   border: 0px solid black;
+   border-radius: 50%;
+   color: var(--bg-secondary);
+   width: 26px;
+   height: 26px;
+   font-size: 30px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   line-height: 1.5rem;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+   outline: none;
+}
+.classes__navbar-button-icon {
+   width: 18px;
 }
 .classes__card-container {
    display: flex;
@@ -195,6 +225,7 @@ body {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
+   align-items: center;
    width: 90%;
    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 6px;
@@ -233,7 +264,7 @@ body {
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
    outline: none;
    user-select: none;
-   margin-right: 14px;
+   z-index: 2;
 }
 .class-date__open-button {
    background-color: var(--emphasis);
@@ -249,10 +280,11 @@ body {
    font-weight: bold;
    display: flex;
    justify-content: center;
-   line-height: 10rem;
+   /* line-height: 0px; */
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
    outline: none;
    user-select: none;
+   margin-right: 14px;
 }
 
 .class-date__open-button--active {
@@ -264,6 +296,10 @@ body {
    font-size: 1em;
    font-weight: bold;
    user-select: none;
+}
+.class-date__button-icon {
+   width: 16px;
+   fill: blanchedalmond;
 }
 
 /* ====================== Date Attendance ====================== */
@@ -278,7 +314,6 @@ body {
    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 0px 0px 6px 6px;
    padding: 10px;
-   transition: height 0.18s linear;
 }
 .date-attendance--active {
    height: auto;
@@ -294,8 +329,7 @@ body {
    max-width: 200px;
    margin: 6px;
    opacity: 0;
-   transition: opacity 0.1s ease-in;
-   transition-delay: 0.18s;
+   transition: opacity 0.2s ease-in;
 }
 .date-attendance__row--active {
    opacity: 100%;
