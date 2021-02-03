@@ -70,10 +70,7 @@ const IndividualClass = (props) => {
                <div className="classes__navbar">
                   <h2 className="classes__navbar-title">{indClass.name}</h2>
                   <div className="classes__navbar-button-row">
-                     <button
-                        className="classes__navbar-save-button"
-                        onClick={handleAddClassDate}
-                     >
+                     <button className="classes__navbar-save-button">
                         <img
                            src={saveIcon}
                            className="classes__navbar-button-icon"

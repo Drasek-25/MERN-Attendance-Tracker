@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 import ClassCard from "../components/ClassCard";
+import CohortForm from "../components/CohortForm";
 import plusIcon from "../data/images/plus.svg";
 
 const Classes = () => {
    const [classes, setClasses] = useState();
+   const [activeForm, setActiveForm] = useState(true);
 
    useEffect(() => {
       const getClasses = () => {
@@ -19,6 +22,7 @@ const Classes = () => {
 
    return (
       <div className="view">
+         {activeForm && <CohortForm />}
          <div className="classes">
             <div className="classes__navbar">
                <h2 className="classes__navbar-title">Classes</h2>
