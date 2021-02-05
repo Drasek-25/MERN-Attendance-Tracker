@@ -1,16 +1,34 @@
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
+
+import ClassCardMenu from "./ClassCardMenu";
 
 const ClassCard = ({ classTitle, students, classId }) => {
+   const [activeMenu, setActiveMenu] = useState(false);
+   const handleMeatballMenu = (e) => {
+      e.stopPropagation();
+      setActiveMenu(!activeMenu);
+   };
    const history = useHistory();
    const handleCardClick = () => {
-      history.push(`/class/${classId}`);
+      if (activeMenu) setActiveMenu(!activeMenu);
+      if (!activeMenu) history.push(`/class/${classId}`);
    };
    return (
       <div className="class-card" onClick={handleCardClick}>
+         {activeMenu && (
+            <ClassCardMenu handleMeatballMenu={handleMeatballMenu} />
+         )}
          <div className="class-card__header">
             <h2 className="class-card__title">{classTitle}</h2>
-            <button className="class-card__button">...</button>
+            <button
+               className="class-card__button"
+               onClick={(e) => handleMeatballMenu(e)}
+            >
+               ...
+            </button>
          </div>
+
          <h3 className="class-card__subtitle">Students</h3>
          <div className="class-card__student-container">
             {students.map((student, i) => {

@@ -7,7 +7,7 @@ import plusIcon from "../data/images/plus.svg";
 
 const Classes = () => {
    const [classes, setClasses] = useState();
-   const [activeForm, setActiveForm] = useState(true);
+   const [activeForm, setActiveForm] = useState(false);
 
    const handleAddClassButton = () => {
       setActiveForm(!activeForm);
