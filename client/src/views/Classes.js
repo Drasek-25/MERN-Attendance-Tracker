@@ -8,9 +8,22 @@ import plusIcon from "../data/images/plus.svg";
 const Classes = () => {
    const [classes, setClasses] = useState();
    const [activeForm, setActiveForm] = useState(false);
+   const initialEditFormData = {
+      classTitle: null,
+      students: null,
+   };
+   const [editFormData, setEditFormData] = useState(initialEditFormData);
 
    const handleAddClassButton = () => {
       setActiveForm(!activeForm);
+   };
+
+   const handleEditClassButton = (students, classTitle) => {
+      //FIGURE OUT HOW TO DEAL WITH SETEDITFORM DATA RACE CONDITION WITH ACTIVE FORM INITIALDATA
+      setEditFormData({ classTitle: classTitle, students: students });
+      console.log(editFormData.students, editFormData.classTitle);
+      setActiveForm(true);
+      setEditFormData(initialEditFormData);
    };
 
    useEffect(() => {
@@ -26,7 +39,13 @@ const Classes = () => {
 
    return (
       <div className="view">
-         {activeForm && <CohortForm setActiveForm={setActiveForm} />}
+         {activeForm && (
+            <CohortForm
+               setActiveForm={setActiveForm}
+               classTitle={editFormData.classTitle || ""}
+               students={editFormData.students || ""}
+            />
+         )}
          <div className="classes">
             <div className="classes__navbar">
                <h2 className="classes__navbar-title">Classes</h2>
@@ -46,6 +65,7 @@ const Classes = () => {
                            students={clas.enrolledStudents}
                            key={clas._id}
                            classId={clas._id}
+                           handleEditClassButton={handleEditClassButton}
                         />
                      );
                   })}

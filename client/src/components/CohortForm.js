@@ -1,11 +1,9 @@
-import { text } from "body-parser";
 import { useState, useEffect } from "react";
-import checkMark from "../data/images/green-checkmark-line.svg";
 
-const CohortForm = ({ setActiveForm }) => {
+const CohortForm = ({ setActiveForm, classTitle, students }) => {
    const initialForm = {
-      name: "",
-      students: "",
+      classTitle: classTitle,
+      students: students,
    };
    const [form, setForm] = useState(initialForm);
 
