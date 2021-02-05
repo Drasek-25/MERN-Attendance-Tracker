@@ -153,8 +153,6 @@ body {
    height: 26px;
    font-size: 30px;
    font-weight: bold;
-   display: flex;
-   justify-content: center;
    line-height: 1.5rem;
    box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
    outline: none;
@@ -393,15 +391,62 @@ body {
    padding-top: 80px;
 }
 .cohort-form__container {
-   height: 600px;
-   margin: 0px auto;
-   background-color: var(--bg-tertiary);
+   height: 500px;
    max-width: 800px;
-   width: 70%;
-   border-radius: 10px;
+   width: 65%;
+   display: flex;
+   flex-direction: column;
+   margin: 0px auto;
+   background-color: var(--bg-secondary);
+   border: 3px var(--bg-tertiary) solid;
    border-radius: 10px;
    box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.25);
-   padding-bottom: 20px;
+   padding: 40px;
+   padding-top: 20px;
+   box-sizing: border-box;
+}
+.cohort-form__field-title {
+   color: var(--font-title);
+   font-size: 1.3em;
+   margin: 10px 0px;
+}
+.cohort-form__field {
+   background-color: var(--bg-tertiary);
+   width: 98%;
+   height: 35px;
+   border: 0px solid black;
+   border-radius: 4px;
+   padding: 10px 10px;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+   color: var(--bg-secondary);
+   font-weight: bold;
+   outline: none;
+}
+.cohort-form__field-details {
+   font-size: 18px;
+   margin-bottom: 10px;
+}
+#students {
+   height: 100%;
+}
+.cohort-form__submit-button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--emphasis);
+   border: 0px solid black;
+   border-radius: 50%;
+   color: var(--bg-secondary);
+   width: 26px;
+   height: 26px;
+   box-shadow: inset -4px 4px 3px rgba(0, 0, 0, 0.25);
+   outline: none;
+   padding: 15px;
+   font-size: 20px;
+   font-weight: bold;
+   margin-top: 10px;
+   margin-left: auto;
+   margin-bottom: -20px;
 }
 /* ====================== XXXXX ====================== */
 /* ====================== XXXXX ====================== */

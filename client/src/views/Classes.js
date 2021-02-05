@@ -9,6 +9,10 @@ const Classes = () => {
    const [classes, setClasses] = useState();
    const [activeForm, setActiveForm] = useState(true);
 
+   const handleAddClassButton = () => {
+      setActiveForm(!activeForm);
+   };
+
    useEffect(() => {
       const getClasses = () => {
          const classesRoute = "http://localhost:8080/class";
@@ -22,11 +26,14 @@ const Classes = () => {
 
    return (
       <div className="view">
-         {activeForm && <CohortForm />}
+         {activeForm && <CohortForm setActiveForm={setActiveForm} />}
          <div className="classes">
             <div className="classes__navbar">
                <h2 className="classes__navbar-title">Classes</h2>
-               <button className="classes__navbar-add-button">
+               <button
+                  className="classes__navbar-add-button"
+                  onClick={handleAddClassButton}
+               >
                   <img src={plusIcon} className="classes__navbar-button-icon" />
                </button>
             </div>
